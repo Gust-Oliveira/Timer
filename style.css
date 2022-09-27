@@ -1,0 +1,101 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+body{
+    height: 100%;
+    font-size: 16px;
+    font-family:'roboto', 'Courier New', Courier, monospace;
+}
+#container{
+    background: rgba(0, 0, 0, 0.1);
+    position: relative;
+    top:50px;
+    width: 500px;
+    height:500px;
+    padding:20px;
+    margin:auto;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+#tempos{
+    box-sizing: border-box;;
+    width:100%;
+    height:50px;
+    padding:10px;
+    border-radius: 15px;
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+.span{
+    background: rgb(221, 72, 18);
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding:8px 19px;
+    border-radius: 10px;
+    margin-right:10px;
+}
+#span-personalizado{
+    background: rgb(255, 215, 200);
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding:8px 19px;
+    border-radius: 10px;
+    border:2px solid orangered;
+    margin-right:10px;
+}
+#tempos span button{
+    background:transparent;
+    width: 100%;
+    border-radius: 10px;
+    border:hidden;
+    cursor: pointer;
+}
+#container-contador{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    height: 200px;
+    margin: auto;
+    margin-top:50px;
+    border-radius: 30px;
+    font-size: 4rem;
+    font-weight: bold;
+}
+#container-botoes{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+#iniciar-cotagem{
+    border-radius: 20px;
+    border:2px solid rgb(23, 100, 23);
+    padding:10px 35px;
+    background: rgb(41, 180, 41);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 1s;
+}
+#iniciar-cotagem:hover{
+    background-color:rgb(100, 192, 100);;
+}
+#cancelar-contagem{
+    background:rgb(163, 163, 163);
+    border-radius: 20px;
+    border: 2px solid rgb(39, 39, 39);
+    padding:10px 35px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 1s;
+}
+#cancelar-contagem:hover{
+    background:rgb(187, 185, 185) ;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer - Gustavo</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <main id="container">
+        <div id="tempos">
+            <span class=" span" onclick="inserirTempo('h')">1h</span>
+            <span class=" span" onclick="inserirTempo('m')">1m</span>
+            <span class=" span" onclick="inserirTempo('s')">1s</span>
+            <span id="span-personalizado"><button onclick="tempoPersonalizado()"> Tempo personaizado</button></span>
+        </div>
+        <div id="container-contador">
+        </div>
+        <div id="container-botoes">
+            <button id="iniciar-cotagem" onclick="startPause()">Iniciar</button>
+            <button id="cancelar-contagem" onclick="cancelar()">Cancelar</button>
+        </div>
+    </main>
+
+
+    <script src="timer.js"></script>
+</body>
+</html>
