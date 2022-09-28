@@ -1,7 +1,7 @@
 let mostrador = document.getElementById("container-contador");
-let h = 0
-let m = 0
-let s = 0
+let h = 0;
+let m = 0;
+let s = 0;
 mostrador.innerHTML = `${h} : ${m} : ${s}`;
 function inserirTempo(tempo){
     switch(tempo){
@@ -40,12 +40,12 @@ function inserirTempo(tempo){
 
 function tempoPersonalizado(){
     let tempoP = prompt("Coloque a quantidade de segundos");
-    if(!tempoP || tempoP == "NaN"){
+    tempoP = Number(tempoP)
+    if(!tempoP){
         alert ("coloque um tempo válido");
         return
-    }else{
-        tempoP = parseInt(tempoP);
     }
+    
     h = Math.floor(tempoP / 3600);
     m = Math.floor((tempoP - h*3600)/60);
     s = Math.floor(tempoP % 60)
@@ -60,7 +60,6 @@ function tempoPersonalizado(){
 
 let tempofuncao = 1000
 let temporizador;
-
 
 let verifica = true;
 
@@ -83,6 +82,9 @@ function startPause(){
 
 
 function cancelar(){
+    if(h == 0 && m == 0 && s == 0){
+        return
+    }
     verifica = !verifica
     document.getElementById("iniciar-cotagem").innerHTML = "Iniciar"
     clearInterval(temporizador);
@@ -110,7 +112,6 @@ function cron(){
                 clearInterval(temporizador)
                 verifica = !verifica
                 document.getElementById("iniciar-cotagem").innerHTML = "Iniciar"
-                return
             }
         }
         mostrador.innerHTML = `${h} : ${m} : ${s}`;        
