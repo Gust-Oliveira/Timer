@@ -77,7 +77,7 @@ function startStop(){
     }else{
         clearInterval(timer)
         check = !check
-        document.getElementById("iniciar-cotagem").innerHTML = "Star"
+        document.getElementById("iniciar-cotagem").innerHTML = "Start"
     }
     }
 
@@ -87,7 +87,7 @@ function reset(){
         return
     }
     check = !check
-    document.getElementById("iniciar-cotagem").innerHTML = "Iniciar"
+    document.getElementById("iniciar-cotagem").innerHTML = "Start"
     clearInterval(timer);
     h = 0;
     m = 0;
@@ -112,7 +112,7 @@ function cron(){
                 s = "00";
                 clearInterval(timer)
                 check = !check
-                document.getElementById("iniciar-cotagem").innerHTML = "Iniciar"
+                document.getElementById("iniciar-cotagem").innerHTML = "Start"
             }
         }
         dial.innerHTML = `${h} : ${m} : ${s}`;     
