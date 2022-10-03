@@ -1,97 +1,98 @@
-let mostrador = document.getElementById("container-contador");
+let dial = document.getElementById("container-contador");
 let h = 0;
 let m = 0;
 let s = 0;
-mostrador.innerHTML = `${h} : ${m} : ${s}`;
-function inserirTempo(tempo){
-    switch(tempo){
+dial.innerHTML = `${h} : ${m} : ${s}`;
+
+function setTime(time){
+    switch(time){
         case "h":
             if(h == 99){
                 h = 0;
                 h++;
-                mostrador.innerHTML = `${h} : ${m} : ${s}`;
+                dial.innerHTML = `${h} : ${m} : ${s}`;
             }else{
                 h++;
-                mostrador.innerHTML = `${h} : ${m} : ${s}`;
+                dial.innerHTML = `${h} : ${m} : ${s}`;
             }
         break;
         case "m":
             if(m == 59){
                 m = 00;
                 h++;
-                mostrador.innerHTML = `${h} : ${m} : ${s}`;
+                dial.innerHTML = `${h} : ${m} : ${s}`;
             }else{
                 m++;
-                mostrador.innerHTML = `${h} : ${m} : ${s}`;
+                dial.innerHTML = `${h} : ${m} : ${s}`;
             }
         break;
         case "s":
             if(s == 59){
                 s = 00;
                 m++;
-                mostrador.innerHTML = `${h} : ${m} : ${s}`;
+                dial.innerHTML = `${h} : ${m} : ${s}`;
             }else{
                 s++;
-                mostrador.innerHTML = `${h} : ${m} : ${s}`;
+                dial.innerHTML = `${h} : ${m} : ${s}`;
             }
             break;
     }
 }
 
-function tempoPersonalizado(){
-    let tempoP = prompt("Coloque a quantidade de segundos");
-    tempoP = Number(tempoP)
-    if(!tempoP){
+function customTime(){
+    let timeC = prompt("Coloque uma quantidade de segundos menor que 360000s");
+    timeC = Number(timeC)
+    if(!timeC){
         alert ("coloque um tempo válido");
         return
     }
     
-    h = Math.floor(tempoP / 3600);
-    m = Math.floor((tempoP - h*3600)/60);
-    s = Math.floor(tempoP % 60)
-      if(tempoP >= 360000){
+    h = Math.floor(timeC / 3600);
+    m = Math.floor((timeC - h*3600)/60);
+    s = Math.floor(timeC% 60)
+      if(timeC >= 360000){
           alert("coloque um número menor que 360000s")
           return
       }else{
-        mostrador.innerHTML = `${h} : ${m} : ${s}`;
+        dial.innerHTML = `${h} : ${m} : ${s}`;
   }
   }
 
 
-let tempofuncao = 1000
-let temporizador;
+let timeFunction = 1000
+let timer;
 
-let verifica = true;
+let check = true;
 
-function startPause(){
+function startStop(){
     if(h == 0 && m == 0 && s == 0){
         return
     }
-    if(verifica){
-        temporizador = setInterval(() => {
+    if(check){
+        timer = setInterval(() => {
             cron();
-           }, tempofuncao)
-           verifica = !verifica
-           document.getElementById("iniciar-cotagem").innerHTML = "Pausar";
+           }, timeFunction)
+           check = !check
+           document.getElementById("iniciar-cotagem").innerHTML = "Stop";
     }else{
-        clearInterval(temporizador)
-        verifica = !verifica
-        document.getElementById("iniciar-cotagem").innerHTML = "Iniciar"
+        clearInterval(timer)
+        check = !check
+        document.getElementById("iniciar-cotagem").innerHTML = "Star"
     }
     }
 
 
-function cancelar(){
+function reset(){
     if(h == 0 && m == 0 && s == 0){
         return
     }
-    verifica = !verifica
+    check = !check
     document.getElementById("iniciar-cotagem").innerHTML = "Iniciar"
-    clearInterval(temporizador);
+    clearInterval(timer);
     h = 0;
     m = 0;
     s = 0;
-    mostrador.innerHTML = `${h} : ${m} : ${s}`;
+    dial.innerHTML = `${h} : ${m} : ${s}`;
 }
 
 
@@ -109,10 +110,10 @@ function cron(){
                 h = "00";
                 m = "00";
                 s = "00";
-                clearInterval(temporizador)
-                verifica = !verifica
+                clearInterval(timer)
+                check = !check
                 document.getElementById("iniciar-cotagem").innerHTML = "Iniciar"
             }
         }
-        mostrador.innerHTML = `${h} : ${m} : ${s}`;        
+        dial.innerHTML = `${h} : ${m} : ${s}`;     
     }

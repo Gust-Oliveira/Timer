@@ -10,16 +10,16 @@
 <body>
     <main id="container">
         <div id="tempos">
-            <span class=" span" onclick="inserirTempo('h')">1h</span>
-            <span class=" span" onclick="inserirTempo('m')">1m</span>
-            <span class=" span" onclick="inserirTempo('s')">1s</span>
-            <span id="span-personalizado"><button onclick="tempoPersonalizado()"> Tempo personaizado</button></span>
+            <span class=" span" onclick="setTime('h')">1h</span>
+            <span class=" span" onclick="setTime('m')">1m</span>
+            <span class=" span" onclick="setTime('s')">1s</span>
+            <span id="span-personalizado"><button onclick="customTime()">Custom time</button></span>
         </div>
         <div id="container-contador">
         </div>
         <div id="container-botoes">
-            <button id="iniciar-cotagem" onclick="startPause()">Iniciar</button>
-            <button id="cancelar-contagem" onclick="cancelar()">Cancelar</button>
+            <button id="iniciar-cotagem" onclick="startStop()">start</button>
+            <button id="cancelar-contagem" onclick="reset()">reset</button>
         </div>
     </main>
 
